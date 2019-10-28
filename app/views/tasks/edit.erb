@@ -1,0 +1,14 @@
+
+<h1>Edit Task</h1>
+
+<form class="" action="/tasks/:id" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+
+  Title: <input type="text" name="title" value="<%= @task.title %>"/><br>
+
+  Description: <br>
+  <textarea name="Description" rows="8" cols="80"><%= @task.description %></textarea><br>
+
+  <input type="submit" name="submit" value="Edit Task">
+
+</form>

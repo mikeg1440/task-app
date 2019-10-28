@@ -1,0 +1,16 @@
+
+<h1>Tasks</h1>
+
+<hr><br>
+
+<% if @tasks %>
+
+  <% @tasks.each do |task| %>
+    <input type="checkbox" name="<%= task.id %>" value="<%= task.id %>" <%= "checked" if task.complete %>>  <%= task.title %><br><br>
+  <% end %>
+
+<% else %>
+
+  <h2>No Tasks to List!</h2>
+
+<% end %>
