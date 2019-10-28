@@ -2,7 +2,7 @@
 
 # Todo-App
 
-ROUTES
+Task ROUTES
 
 GET       '/'                   index
 GET       '/tasks'              tasks/index
@@ -13,8 +13,16 @@ PATCH     '/tasks/:id'          {update}
 DELETE    '/tasks/:id'          {delete}
 
 
-1. create tasks routes
-2. make sure tasks routes are working
+User ROUTES
+
+GET       '/login'              users/login
+GET       '/signup'             users/signup
+GET       '/logout'             users/logout
+POST      '/login'              {login user}
+POST      '/signup'             {create user}
+
+*1. create tasks routes
+*2. make sure tasks routes are working
 3. create users ROUTES
 4. test users routes
 5. link users and tasks

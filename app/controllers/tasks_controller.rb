@@ -9,6 +9,13 @@ class UsersController < ApplicationController
     erb :'tasks/new'
   end
 
+  post '/tasks' do
+    params.delete("submit")
+    task = Task.create(params)
+    User.first.tasks << task
+    redirect '/tasks'
+  end
+
   get '/tasks/:id' do
     @task = Task.find_by_id(params[:id])
     # binding.pry
@@ -21,6 +28,20 @@ class UsersController < ApplicationController
   end
 
   patch '/tasks/:id' do
-  end 
+    task = Task.find_by_id(params[:id])
+    binding.pry
+    if task && task.update(title: params[:title], description: params[:description])
+      redirect "/tasks/#{params[:id]}"
+    else
+      redirect "/failure"
+    end
+  end
+
+  delete '/tasks/:id' do
+    task = Task.find_by_id(params[:id])
+    binding.pry
+    task.delete
+    redirect '/tasks'
+  end
 
 end

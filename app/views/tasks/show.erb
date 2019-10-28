@@ -1,8 +1,11 @@
 
+<a href="/tasks">Home</a>
+
 <div class="right" style="float:right;">
   <a href="/tasks/<%= @task.id %>/edit" >Edit Task</a><br>
-  <form class="" action="/tasks/:id" method="post">
-    <input type="hidden" name="_method" value="Delete Task">
+  <form class="" action="/tasks/<%= @task.id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" name="delete_task" value="Delete Task">
   </form>
 </div>
 

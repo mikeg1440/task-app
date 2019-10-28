@@ -10,9 +10,9 @@ gem 'thin'
 gem 'shotgun'
 gem 'bcrypt'
 gem 'tux'
+gem 'pry-moves'
 
 group :test do
-  gem 'pry-moves'
   gem 'rspec'
   # gem 'capybara'
   gem 'rack-test'
