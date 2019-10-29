@@ -1,7 +1,7 @@
 <script type="text/javascript" src="javascripts/update.js"></script>
 
 <div class="right" style="float: right;">
-  <a href="/tasks/new">New Task</a>
+  <a class="new_btn" href="/tasks/new">New Task</a>
 </div>
 
 <h1>Tasks</h1>
@@ -10,20 +10,28 @@
 
 <% if @tasks %>
 
-  <% @tasks.each do |task| %>
-    <div class="task">
+  <form class="" action="/tasks" method="post">
+    <input type="hidden" name="_method" value="PATCH">
 
-      <label class="container">
-        <input type="checkbox" name="<%= task.id %>" value="<%= task.id %>" <%= "checked" if task.complete %>>  <%= task.title %>
-        <span class="checkmark"></span>
-      </label>
+    <% @tasks.each do |task| %>
+      <div class="task">
 
-      <a class="option_text" href="/tasks/<%= task.id %>/edit">Edit</a>
-      <a class="option_text" href="#description">Description</a>
-      <p class="task_description"><%= task.description %></p>
+        <label class="container">
+          <input type="checkbox" name="task_id" onchange="update_tasks(this)" value="<%= task.id %>" <%= "checked" if task.complete %>>  <%= task.title %>
+          <span class="checkmark"></span>
+          <a class="option_text" href="/tasks/<%= task.id %>/edit">Edit</a>
+          <a class="option_text" id="delete-<%= task.id %>" onclick="delete_task(this)" href="#/tasks/<%= task.id %>/delete">Delete</a>
+          <!-- <a class="option_text" href="#description">Description</a> -->
+        </label>
 
-    </div>
-  <% end %>
+        <p class="task_description"><%= task.description %></p>
+
+      </div>
+    <% end %>
+
+
+    <input type="submit" id="update_task_btn" hidden>
+  </form>
 
 <% else %>
 

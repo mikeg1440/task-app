@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 
   get '/tasks' do
     if is_logged_in?
-      @tasks = Task.all
+      user = current_user
+      @tasks = user.tasks
       erb :'tasks/index'
     else
       redirect '/login'
@@ -19,19 +20,30 @@ class UsersController < ApplicationController
 
   post '/tasks' do
     if is_logged_in?
+      user = current_user
       params.delete("submit")
       task = Task.create(params)
-      User.first.tasks << task
+      user.tasks << task
       redirect '/tasks'
     else
       redirect '/login'
     end
   end
 
+  patch '/tasks' do
+    task = Task.find_by_id(params[:task_id])
+    if task.complete
+      task.complete = false
+    else
+      task.complete = true
+    end
+    task.save
+    redirect '/tasks'
+  end
+
   get '/tasks/:id' do
-    if is_logged_in?
+    if is_logged_in? && current_user.tasks.include?(Task.find_by_id(params[:id]))
       @task = Task.find_by_id(params[:id])
-      # binding.pry
       erb :'tasks/show', layout: :'tasks/layout'
     else
       redirect '/login'
@@ -50,7 +62,6 @@ class UsersController < ApplicationController
   patch '/tasks/:id' do
     if is_logged_in?
       task = Task.find_by_id(params[:id])
-      binding.pry
       if task && task.update(title: params[:title], description: params[:description])
         redirect "/tasks/#{params[:id]}"
       else
@@ -64,7 +75,6 @@ class UsersController < ApplicationController
   delete '/tasks/:id' do
     if is_logged_in?
       task = Task.find_by_id(params[:id])
-      binding.pry
       task.delete
       redirect '/tasks'
     else

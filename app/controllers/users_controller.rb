@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   get '/login' do
-    erb :'users/login'
+    if is_logged_in?
+      redirect '/tasks'
+    else
+      erb :'users/login'
+    end
   end
 
   post '/login' do
@@ -22,7 +26,17 @@ class UsersController < ApplicationController
 
   post '/signup' do
     # create new user if username not taken, sign user in then route to /tasks
-    binding.pry
+    user = User.find_or_create_by(username: params[:username], email: params[:email])
+    user.password = params[:password]
+    user.save
+    if user.errors.any?
+      @error_msgs = user.errors.full_messages
+      redirect '/failure'
+    else
+      session[:user_id] = user.id
+      response.set_cookie(:user_id, user.id)
+      redirect '/tasks'
+    end
   end
 
   get '/logout' do
