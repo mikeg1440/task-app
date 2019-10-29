@@ -17,6 +17,15 @@ class ApplicationController < Sinatra::Base
     erb :fail
   end
 
+  helpers do
+    def is_logged_in?
+      !!request.cookies[:user_id] || !!session[:user_id]
+    end
+
+    def current_user
+      User.find_by_id(request.cookies[:user_id]) || User.find_by_id(session[:user_id])
+    end
+  end
 
 
 end

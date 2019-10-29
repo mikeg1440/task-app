@@ -1,3 +1,4 @@
+@import "checkbox.css";
 @media screen {
   /* --- Reset Styles --- */
   * {
@@ -13,14 +14,14 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color: #0ba2d4;
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
   }
 
   .wrapper {
-    background: #fff;
+    background: #8100e21f;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -49,6 +50,33 @@
 
   p {
     margin-bottom: 18px;
+  }
+
+  p.task_description {
+    font-size: 15px;
+  }
+  .option_text {
+    font-size: 9px;
+  }
+
+  .task:hover {
+    background-color: yellow;
+  }
+
+  .task {
+    background-color: greenyellow;
+    padding: 10px 5px 10px 5px;
+    margin-top: 7px;
+    border-radius: 10px;
+  }
+
+  .banner {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    background-color: aquamarine;
+    box-shadow: 8px 10px 7px;
+    border-radius: 10px;
   }
 
   .main {

@@ -1,16 +1,28 @@
-
-<h1>Tasks</h1>
-
-<hr><br>
+<script type="text/javascript" src="javascripts/update.js"></script>
 
 <div class="right" style="float: right;">
   <a href="/tasks/new">New Task</a>
 </div>
 
+<h1>Tasks</h1>
+
+<hr><br>
+
 <% if @tasks %>
 
   <% @tasks.each do |task| %>
-    <input type="checkbox" name="<%= task.id %>" value="<%= task.id %>" <%= "checked" if task.complete %>>  <%= task.title %><br><br>
+    <div class="task">
+
+      <label class="container">
+        <input type="checkbox" name="<%= task.id %>" value="<%= task.id %>" <%= "checked" if task.complete %>>  <%= task.title %>
+        <span class="checkmark"></span>
+      </label>
+
+      <a class="option_text" href="/tasks/<%= task.id %>/edit">Edit</a>
+      <a class="option_text" href="#description">Description</a>
+      <p class="task_description"><%= task.description %></p>
+
+    </div>
   <% end %>
 
 <% else %>
