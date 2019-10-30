@@ -1,13 +1,28 @@
 
-<h1>Log In</h1>
 
 <form class="login-wrapper" action="/login" method="post">
-  Username: <input type="text" name="username" /><br>
 
-  Password: <input type="password" name="password" /><br><br>
+  <h1 class="login-banner center" style="background-color: inherit;">Log In</h1>
 
-  <input type="submit" value="Log In">
-  or
-  <a href="/signup">Sign Up</a>
+  <div class="inner-input-wrapper">
+
+    <div class="input-wrapper">
+      <i class="fa fa-user"></i>
+      <input class="wrap-input login-input" type="text" name="username" placeholder="Username"/><br>
+    </div>
+
+    <div class="input-wrapper">
+      <i class="fa fa-key"></i>
+      <input class="wrap-input login-input" type="password" name="password" placeholder="Password"/><br><br>
+    </div>
+
+
+    <div class="login-btns">
+      <input class="login-btn" type="submit" value="Log In">
+      or
+      <a class="login-btn" href="/signup">Sign Up</a>
+    </div>
+
+  </div>
 
 </form>
