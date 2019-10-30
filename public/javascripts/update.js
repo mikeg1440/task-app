@@ -11,10 +11,14 @@ function update_tasks(task)
 function delete_task(link)
 {
   var xhr = new XMLHttpRequest();
-  xhr.open("DELETE", '/tasks', true);
+  var link_uri = link.attributes["href"];
+  var task_id = link_uri.textContent.match(/\d+/i)[0];
+  // alert(task_id)
+  xhr.open("DELETE", `/tasks/${task_id}`, true);
   xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  params = `task_id= ${task.value}`
+  params = `task_id=${task_id}`
   xhr.send(params);
+  location.reload();
 }
 
 // window.onload = function ()

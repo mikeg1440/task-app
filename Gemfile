@@ -11,7 +11,6 @@ gem 'shotgun'
 gem 'bcrypt'
 gem 'tux'
 gem 'pry-moves'
-gem 'jquery-rails'
 
 group :test do
   gem 'rspec'

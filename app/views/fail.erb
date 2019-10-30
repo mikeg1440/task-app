@@ -1,4 +1,27 @@
 
+<script>
+  document.write('<a href="' + document.referrer + '">Go Back</a>');
+</script>
+
 <h1>There seems to have been a problem</h1>
 
-<h3>Please return to the previous page and try agian</h3>
+<h2>The following needs to be changed</h2>
+
+<% if @user.errors.any? %>
+
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+
+      <li><%= error %></li>
+
+    <% end %>
+
+  </ul>
+
+<% end %>
+
+<br>
+
+<h3>
+  Please return to the <script> document.write('<a href="' + document.referrer + '">previous page</a>');</script> and try agian
+</h3>

@@ -19,8 +19,12 @@
         <label class="container">
           <input type="checkbox" name="task_id" onchange="update_tasks(this)" value="<%= task.id %>" <%= "checked" if task.complete %>>  <%= task.title %>
           <span class="checkmark"></span>
-          <a class="option_text" href="/tasks/<%= task.id %>/edit">Edit</a>
-          <a class="option_text" id="delete-<%= task.id %>" onclick="delete_task(this)" href="#/tasks/<%= task.id %>/delete">Delete</a>
+
+          <div class="option-text">
+            <a class="EditButton" href="/tasks/<%= task.id %>/edit">Edit</a>
+            <a class="DeleteButton" id="delete-<%= task.id %>" onclick="delete_task(this)" href="#<%= task.id %>/delete">Delete</a>
+          </div>
+
           <!-- <a class="option_text" href="#description">Description</a> -->
         </label>
 

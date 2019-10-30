@@ -68,8 +68,97 @@
     color: white;
     font-weight: bold;
   }
-  .option_text {
-    font-size: 9px;
+
+  .center {
+    text-align: center;
+  }
+
+
+  .task-form > input {
+    width: 60%;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+  }
+  .task-form > textarea {
+    width: 100%;
+    margin-left: auto;
+    margin-righ: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .login-wrapper {
+    width: 500px;
+    background: #d0d0d0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .inner-login-wrapper {
+    width: 49%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+  }
+
+  .wrap-input {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 27px;
+    line-height: 2;
+    display: flex;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .login-banner {
+    background-color: #9797b1;
+  }
+
+  .SubmitButton
+  {
+  	background-image: url(../images/signup.png);
+  	background-repeat: no-repeat;
+  	background-color:	transparent;
+  	height:	66px;
+  	width: 182px;
+  	border:	none;
+  	text-indent: -999em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .DeleteButton:hover {
+    background-color: #ff8989;
+    color: black;
+  }
+
+  .EditButton {
+    background-color: orange;
+    padding: 5px 10px;
+    color: aliceblue;
+    font-weight: bold;
+  }
+  .EditButton:hover {
+    background-color: #ffc55b;
+    color: black;
+  }
+
+  .DeleteButton {
+    background-color: red;
+    padding: 5px 10px;
+    color: aliceblue;
+    font-weight: bold;
+  }
+
+  .option-text {
+    float: right;
+    font-size: 10px;
   }
 
   .task:hover {
@@ -87,7 +176,7 @@
     margin: auto;
     width: 80%;
     text-align: center;
-    background-color: aquamarine;
+    background-color: #dbfffa;
     box-shadow: 8px 10px 7px;
     border-radius: 10px;
   }

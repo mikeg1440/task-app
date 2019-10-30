@@ -1,14 +1,33 @@
 
 
-<h1>Create New User</h1>
 
-<form class="" action="/signup" method="post">
-  Username: <input type="text" name="username" /><br>
+<form class="login-wrapper" action="/signup" method="post">
 
-  Email: <input type="email" name="email" /><br>
+  <h1 class="center login-banner">Create New User</h1>
 
-  Password: <input type="password" name="password" /><br>
+  <div class="inner-login-wrapper">
 
-  <input type="submit" value="Sign Up">
+    Username:
+    <div class="input-wrapper">
+      <i class="fa fa-user"></i>
+      <input class="wrap-input login-input" type="text" name="username" /><br>
+    </div>
+
+    Email:
+    <div class="input-wrapper">
+      <i class="fa fa-envelope-square"></i>
+      <input class="wrap-input login-input" type="email" name="email" /><br>
+    </div>
+
+    Password:
+    <div class="input-wrapper">
+      <i class="fa fa-key"></i>
+      <input class="wrap-input login-input" type="password" name="password" /><br>
+    </div>
+
+
+    <input class="SubmitButton" type="submit" value="Sign Up">
+
+  </div>
 
 </form>

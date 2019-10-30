@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "This has to be changed quick"
+    set :session_secret, "This has to be changed quick" # change to SecureRandom.hex(64)
   end
 
   get "/" do
@@ -14,6 +14,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/failure' do
+    binding.pry
     erb :fail
   end
 
