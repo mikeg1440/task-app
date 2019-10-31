@@ -14,7 +14,8 @@
     <input type="hidden" name="_method" value="PATCH">
 
     <% @tasks.each do |task| %>
-      <div class="task">
+      <!-- <div class="task"> -->
+      <div class="<%= task.past_due? ? "task-expired" : "task" %>">
 
         <label class="container">
           <input type="checkbox" name="task_id" onchange="update_tasks(this)" value="<%= task.id %>" <%= "checked" if task.complete %>>  <%= task.title %>
@@ -30,6 +31,7 @@
 
         <p class="task_description"><%= task.description %></p>
 
+        Due: <%= task.due_date %> 
       </div>
     <% end %>
 

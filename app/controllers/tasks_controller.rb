@@ -24,6 +24,7 @@ class UsersController < ApplicationController
       params.delete("submit")
       task = Task.create(params)
       user.tasks << task
+      binding.pry
       redirect '/tasks'
     else
       redirect '/login'
@@ -80,6 +81,16 @@ class UsersController < ApplicationController
     else
       redirect '/login'
     end
+  end
+
+  helpers do
+    def convert_datetime(date, time)
+      # binding.pry
+      # date = self.due_date
+      # time = self.due_time
+      DateTime.new(date.year, date.month, date.day, time.hour, time.min)
+    end
+
   end
 
 end

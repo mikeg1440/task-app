@@ -1,14 +1,22 @@
 
-<h1>Welcome to your Todo App</h1>
 
 <br><br>
 
 <form class="login-wrapper" action="/login" method="post">
-  Username: <input type="text" name="username" /><br>
 
-  Password: <input type="password" name="password" /><br><br>
+  <i class="fa fa-user"></i>
+  <input class="wrap-input" type="text" name="username" placeholder="Username" /><br>
 
-  <input type="submit" value="Log In">
+  <i class="fa fa-key"></i>
+  <input class="wrap-input" type="password" name="password" placeholder="Password" /><br><br>
+
+  <!-- <input type="submit" value="Log In">
   or
-  <a href="/signup">Sign Up</a>
+  <a href="/signup">Sign Up</a> -->
+  <div class="login-btns">
+    <input class="login-btn" type="submit" value="Log In">
+    or
+    <a class="login-btn" href="/signup">Sign Up</a>
+  </div>
+
 </form>

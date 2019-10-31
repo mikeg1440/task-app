@@ -66,10 +66,17 @@
     padding: 5px 13px;
     border-radius: 20px;
     text-align: center;
+    font-size: 19px;
+    font-weight: bold;
   }
   .login-btns {
     display: grid;
     text-align: center;
+  }
+  .create-btn {
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 15px;
   }
 
 
@@ -86,10 +93,17 @@
   }
 
 
+  .task-expired {
+    background-color: #de4444;
+    padding: 10px 5px 10px 5px;
+    margin-top: 7px;
+    border-radius: 10px;
+  }
+
   .task-form > input {
     width: 60%;
     padding: 5px;
-    margin-top: 5px;
+    margin-top: 20px;
     border-radius: 5px;
   }
   .task-form > textarea {
@@ -103,13 +117,14 @@
 
   .login-wrapper {
     width: 50%;
-    padding: 20px;
-    background: #d0d0d0;
+    /* padding: 20px; */
+    /* background: #d0d0d0; */
     border-radius: 20px;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-
+    background-color: inherit;
+    padding: 50px;
   }
 
   .signup-wrapper {
