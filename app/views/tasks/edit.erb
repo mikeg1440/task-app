@@ -4,7 +4,15 @@
 <form class="task-form" action="/tasks/<%= @task.id %>" method="post">
   <input type="hidden" name="_method" value="PATCH">
 
-  Title: <input type="text" name="title" value="<%= @task.title %>"/><br>
+  Title: <input type="text" name="title" value="<%= @task.title %>"/>
+
+  <label for="priority">Priority: </label>
+  <select name="priority">
+    <option value="None" <%= "selected" if !@task.priority %>>None</option>
+    <option value="High" <%= "selected" if @task.priority == "High" %>>High</option>
+    <option value="Medium" <%= "selected" if @task.priority == "Medium" %>>Medium</option>
+    <option value="Low" <%= "selected" if @task.priority == "Low" %>>Low</option>
+  </select>
 
   Description: <br>
   <textarea name="description" rows="8" cols="80"><%= @task.description %></textarea><br>

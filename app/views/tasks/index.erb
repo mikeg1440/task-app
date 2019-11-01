@@ -8,6 +8,18 @@
 
 <hr><br>
 
+<div style="float: right;">
+  <span style="display: flex;">
+    <div class="box high-priority"></div>High
+    <div class="box medium-priority"></div>Medium
+    <div class="box low-priority"></div>Low
+    <div class="box expired-priority"></div>Expired
+  </span>
+</div>
+
+<br/>
+
+
 <% if @tasks %>
 
   <form class="" action="/tasks" method="post">
@@ -19,7 +31,9 @@
 
         <label class="container">
           <input type="checkbox" name="task_id" onchange="update_tasks(this)" value="<%= task.id %>" <%= "checked" if task.complete %>>  <%= task.title %>
-          <span class="checkmark"></span>
+          <span class="checkmark <%= task.priority ? task.priority.downcase : nil %>-priority"></span>
+
+          <span style="font-size: 12px; ">Priority: <b><%= task.priority %></b></span>
 
           <div class="option-text">
             <a class="EditButton" href="/tasks/<%= task.id %>/edit">Edit</a>

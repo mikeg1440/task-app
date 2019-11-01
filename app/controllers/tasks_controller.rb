@@ -22,17 +22,18 @@ class UsersController < ApplicationController
     if is_logged_in?
       user = current_user
       params.delete("submit")
-      task = Task.create(title: params[:title], description: params[:description])
       datetime = convert_datetime(params[:due_date], params[:due_time])
-      task.due_time = datetime
+      task = Task.create(title: params[:title], description: params[:description], due_time: datetime, priority: params[:priority])
+      # task.due_time = datetime
       user.tasks << task
-      binding.pry
+      # binding.pry
       redirect '/tasks'
     else
       redirect '/login'
     end
   end
 
+  # this is for updating the status of tasks from the users main index page
   patch '/tasks' do
     task = Task.find_by_id(params[:task_id])
     if task.complete
@@ -66,8 +67,7 @@ class UsersController < ApplicationController
     if is_logged_in?
       task = Task.find_by_id(params[:id])
       datetime = convert_datetime(params[:due_date], params[:due_time])
-      if task && task.update(title: params[:title], description: params[:description], due_time: datetime)
-        binding.pry
+      if task && task.update(title: params[:title], description: params[:description], due_time: datetime, priority: params[:priority])
         redirect "/tasks/#{params[:id]}"
       else
         redirect "/failure"
@@ -101,7 +101,7 @@ class UsersController < ApplicationController
         # (date.strftime("%Y-%m-%d") + " " + time).to_datetime
       end
       # datetime.change(:offset => "-0400")
-      binding.pry
+      # binding.pry
       datetime
     end
 

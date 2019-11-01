@@ -12,11 +12,11 @@
 
 <h1><%= @task.title %></h1>
 
+Priority: <span class="<%= @task.priority.downcase if @task.priority %>-priority"style="font-weight: bold;"><%= @task.priority %></span>
 
+<br /><br />
 
-<br />
-
-<h5><%= @task.description %></h5>
+<h4><%= @task.description %></h4>
 
 <br>
 

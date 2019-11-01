@@ -61,6 +61,41 @@
     margin-right: 6px;
   }
 
+.box{
+	width:10px;
+	height:10px;
+}
+div.box {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.green{
+	background:lightgreen;
+}
+.cyan{
+	background:cyan;
+}
+.yellow{
+	background:yellow;
+}
+.high-priority{
+	background:lightgreen;
+}
+.medium-priority{
+	background:cyan;
+}
+.low-priority{
+	background:yellow;
+}
+.normal-priority{
+  background: inherit;
+}
+.expired-priority{
+  background: red;
+}
+
+
   .login-btn {
     background-color: #35f935;
     padding: 5px 13px;
@@ -194,7 +229,7 @@
     color: aliceblue;
     font-weight: bold;
     border-radius: 10px;
-    
+
   }
 
   .option-text {
@@ -203,11 +238,11 @@
   }
 
   .task:hover {
-    background-color: yellow;
+    background-color: #e287f3;;
   }
 
   .task {
-    background-color: greenyellow;
+    background-color: #d641f1;
     padding: 10px 5px 10px 5px;
     margin-top: 7px;
     border-radius: 10px;
