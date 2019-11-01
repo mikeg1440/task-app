@@ -1,7 +1,7 @@
 
 <h1>Edit Task</h1>
 
-<form class="" action="/tasks/<%= @task.id %>" method="post">
+<form class="task-form" action="/tasks/<%= @task.id %>" method="post">
   <input type="hidden" name="_method" value="PATCH">
 
   Title: <input type="text" name="title" value="<%= @task.title %>"/><br>
@@ -9,6 +9,16 @@
   Description: <br>
   <textarea name="description" rows="8" cols="80"><%= @task.description %></textarea><br>
 
-  <input type="submit" name="submit" value="Edit Task">
+  <div class="center">
+    Due Date:
+    <input type="date" name="due_date" style="width: 20%;" value="<%= @task.due_time ? @task.due_time.to_date : nil %>" />
+
+    Due Time:
+    <input type="time" name="due_time" style="width: 20%;" value="<%= @task.due_time ? @task.due_time.strftime("%H:%m") : nil %>" />
+
+  </div>
+
+
+  <input class="submit-btn" type="submit" name="submit" value="Edit Task">
 
 </form>

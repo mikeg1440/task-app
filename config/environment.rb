@@ -5,6 +5,7 @@ require 'bundler/setup'
 Bundler.require(:default, ENV['SINATRA_ENV'])
 
 require 'date'
+require 'time'
 
 ActiveRecord::Base.establish_connection(
   :adapter => "sqlite3",

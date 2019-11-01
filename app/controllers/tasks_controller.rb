@@ -22,7 +22,9 @@ class UsersController < ApplicationController
     if is_logged_in?
       user = current_user
       params.delete("submit")
-      task = Task.create(params)
+      task = Task.create(title: params[:title], description: params[:description])
+      datetime = convert_datetime(params[:due_date], params[:due_time])
+      task.due_time = datetime
       user.tasks << task
       binding.pry
       redirect '/tasks'
@@ -63,7 +65,9 @@ class UsersController < ApplicationController
   patch '/tasks/:id' do
     if is_logged_in?
       task = Task.find_by_id(params[:id])
-      if task && task.update(title: params[:title], description: params[:description])
+      datetime = convert_datetime(params[:due_date], params[:due_time])
+      if task && task.update(title: params[:title], description: params[:description], due_time: datetime)
+        binding.pry
         redirect "/tasks/#{params[:id]}"
       else
         redirect "/failure"
@@ -85,10 +89,20 @@ class UsersController < ApplicationController
 
   helpers do
     def convert_datetime(date, time)
-      # binding.pry
-      # date = self.due_date
-      # time = self.due_time
-      DateTime.new(date.year, date.month, date.day, time.hour, time.min)
+      if date.empty? && time.empty?
+        return nil
+      elsif date.empty?
+        # datetime = DateTime.parse(time)
+        datetime = Time.parse(time)
+      else
+        # datetime = DateTime.parse("#{date} #{time}")
+        datetime = Time.parse("#{date} #{time}")
+        # time = DateTime.parse(time)
+        # (date.strftime("%Y-%m-%d") + " " + time).to_datetime
+      end
+      # datetime.change(:offset => "-0400")
+      binding.pry
+      datetime
     end
 
   end

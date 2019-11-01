@@ -73,7 +73,7 @@
     display: grid;
     text-align: center;
   }
-  .create-btn {
+  .submit-btn {
     margin-right: 20%;
     margin-left: 20%;
     margin-top: 15px;
@@ -181,6 +181,7 @@
     padding: 5px 10px;
     color: aliceblue;
     font-weight: bold;
+    border-radius: 10px;
   }
   .EditButton:hover {
     background-color: #ffc55b;
@@ -192,6 +193,8 @@
     padding: 5px 10px;
     color: aliceblue;
     font-weight: bold;
+    border-radius: 10px;
+    
   }
 
   .option-text {

@@ -4,14 +4,17 @@ class Task < ActiveRecord::Base
   validates :title, presence: true
 
 
-  def past_due?
-    self.due <= DateTime.now
-  end
+  # def convert_datetime(date, time)
+  #   if date.empty? && time.empty?
+  #     return nil
+  #   else
+  #     date = DateTime.parse(date)
+  #     time = DateTime.parse(time)
+  #     (date.strftime("%Y-%m-%d") + " " + time).to_datetime
+  #   end
+  # end
 
-  def due
-    binding.pry
-    date = self.due_date
-    time = self.due_time
-    DateTime.new(date.year, date.month, date.day, time.hour, time.min)
+  def past_due?
+    self.due_time.to_time < DateTime.now.to_time
   end
 end
