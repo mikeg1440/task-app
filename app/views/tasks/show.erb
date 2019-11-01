@@ -2,7 +2,7 @@
 
 <% if current_user.tasks.include?(@task) %>
   <div class="right" style="float:right;">
-    <a class="EditButton" href="/tasks/<%= @task.id %>/edit" >Edit Task</a><br>
+    <a class="EditButton" style="display: block;" href="/tasks/<%= @task.id %>/edit" >Edit Task</a><br>
     <form class="" action="/tasks/<%= @task.id %>" method="post">
       <input type="hidden" name="_method" value="DELETE">
       <input class="DeleteButton" type="submit" name="delete_task" value="Delete Task">
@@ -12,10 +12,12 @@
 
 <h1><%= @task.title %></h1>
 
+
+
 <br />
 
 <h5><%= @task.description %></h5>
 
 <br>
 
-Due Time: <span><%= @task.due_time.to_time %></span>
+Due Time: <span><%= @task.due_time.to_time %></span><span style="color: red; font-weight: 100;"><%= " [Expired]" if @task.past_due? %></span>

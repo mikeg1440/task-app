@@ -14,7 +14,7 @@
     <input type="date" name="due_date" style="width: 20%;" value="<%= @task.due_time ? @task.due_time.to_date : nil %>" />
 
     Due Time:
-    <input type="time" name="due_time" style="width: 20%;" value="<%= @task.due_time ? @task.due_time.strftime("%H:%m") : nil %>" />
+    <input type="time" name="due_time" style="width: 20%;" value="<%= @task.due_time ? @task.due_time.to_time.strftime("%H:%M") : nil %>" />
 
   </div>
 
