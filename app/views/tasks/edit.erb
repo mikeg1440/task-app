@@ -1,10 +1,11 @@
 
-<h1>Edit Task</h1>
+<h1 class="white-font center">Edit Task</h1>
 
 <form class="task-form" action="/tasks/<%= @task.id %>" method="post">
   <input type="hidden" name="_method" value="PATCH">
 
-  Title: <input type="text" name="title" value="<%= @task.title %>"/>
+
+  <input type="text" name="title" value="<%= @task.title %>"/>
 
   <label for="priority">Priority: </label>
   <select name="priority">
@@ -14,15 +15,15 @@
     <option value="Low" <%= "selected" if @task.priority == "Low" %>>Low</option>
   </select>
 
-  Description: <br>
+  <br>
   <textarea name="description" rows="8" cols="80"><%= @task.description %></textarea><br>
 
   <div class="center">
-    Due Date:
-    <input type="date" name="due_date" style="width: 20%;" value="<%= @task.due_time ? @task.due_time.to_date : nil %>" />
+    <label for="due_date">Due Date:</label>
+    <input type="date" name="due_date" id="due_date" style="width: 20%;" value="<%= @task.due_time ? @task.due_time.to_date : nil %>" />
 
-    Due Time:
-    <input type="time" name="due_time" style="width: 20%;" value="<%= @task.due_time ? @task.due_time.to_time.strftime("%H:%M") : nil %>" />
+    <label for="due_time">Due Time:</label>
+    <input type="time" name="due_time" id="due_time" style="width: 20%;" value="<%= @task.due_time ? @task.due_time.to_time.strftime("%H:%M") : nil %>" />
 
   </div>
 

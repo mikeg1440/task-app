@@ -1,10 +1,12 @@
 <script type="text/javascript" src="javascripts/update.js"></script>
 
 <div class="right" style="float: right;">
-  <a class="new_btn" href="/tasks/new">New Task</a>
+  <button type="button" class="myButton" onclick="window.location.pathname = '/clear-complete';">Clear Complete</button>
+  <button type="button" class="myButton" onclick="window.location.pathname = '/tasks/new';">New Task</button>
+  <!-- <a class="new_btn" href="/tasks/new">New Task</a> -->
 </div>
 
-<h1>Tasks</h1>
+<h1 class="white-font">Tasks</h1>
 
 <hr><br>
 
@@ -45,7 +47,7 @@
 
         <p class="task_description"><%= task.description %></p>
 
-        Due: <%= task.due_time.to_time %>
+        Due Time: <%= !!task.due_time ? task.due_time.to_time : "None" %>
       </div>
     <% end %>
 

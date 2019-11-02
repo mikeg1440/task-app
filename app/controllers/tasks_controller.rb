@@ -87,6 +87,12 @@ class UsersController < ApplicationController
     end
   end
 
+  get '/clear-complete' do
+    binding.pry
+    current_user.clear_completed
+    redirect '/tasks'
+  end
+
   helpers do
     def convert_datetime(date, time)
       if date.empty? && time.empty?

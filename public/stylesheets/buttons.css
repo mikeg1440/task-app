@@ -1,0 +1,140 @@
+
+
+@media screen {
+
+  /* a.logout_btn {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    margin-right: 6px;
+  } */
+
+
+  .login-btn {
+    background-color: #35f935;
+    padding: 5px 13px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+  }
+  .login-btns {
+    display: grid;
+    text-align: center;
+  }
+  .submit-btn {
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 15px;
+  }
+
+
+  a.new_btn {
+    background-color: cornflowerblue;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+  }
+  a.blue-btn {
+    background-color: cornflowerblue;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+  }
+
+
+  .signupButton
+  {
+  	background-image: url(../images/signup.png);
+  	background-repeat: no-repeat;
+  	background-color:	transparent;
+  	height:	66px;
+  	width: 182px;
+  	border:	none;
+  	text-indent: -999em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .DeleteButton:hover {
+    background-color: #ff8989;
+    color: black;
+  }
+
+  .EditButton {
+    background-color: orange;
+    padding: 5px 10px;
+    color: aliceblue;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  .EditButton:hover {
+    background-color: #ffc55b;
+    color: black;
+  }
+
+  .DeleteButton {
+    background-color: red;
+    padding: 5px 10px;
+    color: aliceblue;
+    font-weight: bold;
+    border-radius: 10px;
+
+  }
+
+  .button {
+    font-size: 17px;
+    line-height: 17px;
+    padding: 5px 10px ;
+    border-radius: 7px;
+    font-family: Georgia, serif;
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+  }
+
+  .myButton {
+    color: #dbfffa;
+    font-size: 17px;
+    line-height: 17px;
+    padding: 10px;
+    border-radius: 7px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    box-shadow: rgb(0, 0, 0) 5px 5px 7px 1px;
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+    background: #0101d891;
+      font-weight: bold;
+  }
+  .myButton:hover { background: #1C6EA4; }
+  .myButton:active { background: #144E75; }
+
+  .logoutButton:visited {
+    color: red;
+  }
+  #logoutButton {
+    position: relative;
+    margin-right: 2px;
+    margin-top: 2px;
+    color: white;
+    background: rgb(255,0,0);
+    background-image: linear-gradient(to top, rgb(245, 8, 8) 0%, rgb(0, 0, 0) 50%, rgb(255, 0, 0) 100%);
+    border: 2px solid rgba(255, 21, 21, 0.61);
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 17px;
+    padding: 5px 10px ;
+    border-radius: 7px;
+    font-family: Georgia, serif;
+    box-shadow: rgb(0, 0, 0) 5px 5px 7px 1px;
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+  }
+
+}

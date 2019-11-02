@@ -1,0 +1,54 @@
+
+
+@media screen {
+
+  p.task_description {
+    font-size: 15px;
+    margin: 10px auto 10px 5px;
+    margin-left: 20px;
+  }
+
+  .task-expired {
+    background-color: #de4444;
+    padding: 10px 5px 10px 5px;
+    margin-top: 7px;
+    border-radius: 10px;
+  }
+
+
+  .task-form > input {
+    width: 60%;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  .task-form > textarea {
+    width: 100%;
+    margin-left: auto;
+    margin-righ: auto;
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .option-text {
+    float: right;
+    font-size: 10px;
+  }
+
+  .task:hover {
+    background-color: #e287f3;;
+  }
+
+  .task {
+    background-color: #d641f1;
+    padding: 10px 5px 10px 5px;
+    margin-top: 7px;
+    border-radius: 10px;
+  }
+
+  .time-input {
+    width: 20%;
+  }
+
+}

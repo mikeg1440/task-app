@@ -1,39 +1,38 @@
 @import "checkbox.css";
+@import "buttons.css";
+@import "tasks.css";
+@import "wrappers.css";
+
 @media screen {
   /* --- Reset Styles --- */
-  * {
-    list-style: none;
+* {
     margin: 0;
     padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
   }
 
   html, body {
     height: 100%;
     width: 100%;
+    overflow: auto;
   }
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: #0ba2d4;
+    background: linear-gradient(90deg, rgba(16,12,99,1) 0%, rgba(80,255,250,1) 49%, rgba(9,9,121,1) 95%);
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
   }
 
-  .wrapper {
-    background: #8100e21f;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 16px auto;
-    max-width: 960px;
-    padding: 2.25%; /* 18px / 800px */
-    width: 85%;
-  }
-
   h1 {
     font-size: 36px;
     line-height: 54px;
+    color: aliceblue;
+
   }
 
   h2 {
@@ -41,25 +40,19 @@
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
+    color: aliceblue;
   }
 
   h3 {
     font-size: 18px;
     line-height: 36px;
-  }
+    color: aliceblue;
 
-  p.task_description {
-    font-size: 15px;
-    margin: 10px auto 10px 5px;
-    margin-left: 20px;
   }
-
-  a.logout_btn {
-    background-color: red;
+  label {
     color: white;
-    padding: 5px;
-    margin-right: 6px;
   }
+
 
 .box{
 	width:10px;
@@ -79,6 +72,9 @@ div.box {
 .yellow{
 	background:yellow;
 }
+.white-font {
+  color: white;
+}
 .high-priority{
 	background:lightgreen;
 }
@@ -96,166 +92,18 @@ div.box {
 }
 
 
-  .login-btn {
-    background-color: #35f935;
-    padding: 5px 13px;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 19px;
-    font-weight: bold;
-  }
-  .login-btns {
-    display: grid;
-    text-align: center;
-  }
-  .submit-btn {
-    margin-right: 20%;
-    margin-left: 20%;
-    margin-top: 15px;
-  }
-
-
-  a.new_btn {
-    background-color: cornflowerblue;
-    padding: 8px;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-  }
-
   .center {
     text-align: center;
   }
 
-
-  .task-expired {
-    background-color: #de4444;
-    padding: 10px 5px 10px 5px;
-    margin-top: 7px;
-    border-radius: 10px;
-  }
-
-  .task-form > input {
-    width: 60%;
-    padding: 5px;
-    margin-top: 20px;
-    border-radius: 5px;
-  }
-  .task-form > textarea {
-    width: 100%;
-    margin-left: auto;
-    margin-righ: auto;
-    margin-top: 5px;
-    border-radius: 5px;
-    padding: 5px;
-  }
-
-  .login-wrapper {
-    width: 50%;
-    /* padding: 20px; */
-    /* background: #d0d0d0; */
-    border-radius: 20px;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: inherit;
-    padding: 50px;
-  }
-
-  .signup-wrapper {
-    width: 500px;
-    background: #d0d0d0;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .inner-login-wrapper {
-    width: 49%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-  }
-
-  .wrap-input {
-    width: 100%;
-    background-color: #fff;
-    border-radius: 27px;
-    line-height: 2;
-    display: flex;
-    padding: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .login-banner {
-    background-color: #9797b1;
-  }
-
-  .SubmitButton
-  {
-  	background-image: url(../images/signup.png);
-  	background-repeat: no-repeat;
-  	background-color:	transparent;
-  	height:	66px;
-  	width: 182px;
-  	border:	none;
-  	text-indent: -999em;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .DeleteButton:hover {
-    background-color: #ff8989;
-    color: black;
-  }
-
-  .EditButton {
-    background-color: orange;
-    padding: 5px 10px;
-    color: aliceblue;
-    font-weight: bold;
-    border-radius: 10px;
-  }
-  .EditButton:hover {
-    background-color: #ffc55b;
-    color: black;
-  }
-
-  .DeleteButton {
-    background-color: red;
-    padding: 5px 10px;
-    color: aliceblue;
-    font-weight: bold;
-    border-radius: 10px;
-
-  }
-
-  .option-text {
-    float: right;
-    font-size: 10px;
-  }
-
-  .task:hover {
-    background-color: #e287f3;;
-  }
-
-  .task {
-    background-color: #d641f1;
-    padding: 10px 5px 10px 5px;
-    margin-top: 7px;
-    border-radius: 10px;
-  }
-
-  .banner {
+  /* .banner {
     margin: auto;
     width: 80%;
     text-align: center;
     background-color: #dbfffa;
     box-shadow: 8px 10px 7px;
     border-radius: 10px;
-  }
+  } */
 
   .main {
     overflow: hidden;

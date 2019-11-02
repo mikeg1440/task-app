@@ -10,9 +10,10 @@
   </div>
 <% end %>
 
-<h1><%= @task.title %></h1>
+<h1 class="white-font"><%= @task.title %></h1>
 
-Priority: <span class="<%= @task.priority.downcase if @task.priority %>-priority"style="font-weight: bold;"><%= @task.priority %></span>
+Priority: 
+<span class="<%= @task.priority.downcase if @task.priority %>-priority"style="font-weight: bold;"><%= @task.priority %></span>
 
 <br /><br />
 
