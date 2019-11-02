@@ -13,4 +13,17 @@ class User < ActiveRecord::Base
      end
   end
 
+  def sort_by_priority
+    sorted = []
+    high = self.tasks.find_all {|t| t.priority == "High"}
+    medium = self.tasks.find_all {|t| t.priority == "Medium"}
+    low = self.tasks.find_all {|t| t.priority == "Low"}
+
+    sorted += high
+    sorted += medium
+    sorted += low
+    sorted
+  end
+
+
 end
