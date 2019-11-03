@@ -17,8 +17,9 @@
 
     <header>
       <% if is_logged_in? %>
-        <div>
-          <a class="right myButton" href="/logout">Logout</a>
+        <div class="" style="float: right;">
+          <!-- <a class="myButon right" href="/logout">Logout</a> -->
+          <button type="button" name="logout" onclick="location.pathname = '/logout'" id="logoutButton">Logout</button>
         </div>
       <% end %>
 

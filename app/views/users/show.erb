@@ -1,0 +1,27 @@
+<%# This is where we show the user settings %>
+
+
+<% if is_logged_in? %>
+
+  <div style="float: left">
+    <a class="BackButton" href="/tasks">Tasks</a>
+  </div>
+
+  <div style="float: right;">
+    <a class="EditButton" href="/users/<%= @user.id %>/edit">Edit User</a>
+  </div>
+
+  <br>
+
+  <div class="wrapper center">
+    <h1>Current User: <span class="purple-font"><%= @user.username %></span></h1>
+
+    <h3>Registered Email: <span class="purple-font"><%= @user.email %></span></h3>
+
+  </div>
+
+<% else %>
+
+  <h1>You must <a href="/Login">Login</a> to view this page.</h1>
+
+<% end %>

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class TasksController < ApplicationController
 
   get '/tasks' do
     if is_logged_in?
@@ -100,23 +100,17 @@ class UsersController < ApplicationController
 
   get '/sort-by-priority' do
 
-  end 
+  end
 
   helpers do
     def convert_datetime(date, time)
       if date.empty? && time.empty?
         return nil
       elsif date.empty?
-        # datetime = DateTime.parse(time)
         datetime = Time.parse(time)
       else
-        # datetime = DateTime.parse("#{date} #{time}")
         datetime = Time.parse("#{date} #{time}")
-        # time = DateTime.parse(time)
-        # (date.strftime("%Y-%m-%d") + " " + time).to_datetime
       end
-      # datetime.change(:offset => "-0400")
-      # binding.pry
       datetime
     end
 

@@ -62,7 +62,17 @@
     color: black;
   }
 
+  .BackButton {
+    border: 2px solid;
+    background-color: blue;
+    padding: 5px 10px;
+    color: aliceblue;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+
   .EditButton {
+    border: 2px solid;
     background-color: orange;
     padding: 5px 10px;
     color: aliceblue;

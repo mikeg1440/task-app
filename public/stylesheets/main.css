@@ -53,7 +53,30 @@
     color: white;
   }
 
+.form {
+  .parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(6, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
 
+.div1 { grid-area: 1 / 1 / 2 / 3; }
+.div2 { grid-area: 2 / 1 / 3 / 3; }
+.div3 { grid-area: 3 / 1 / 4 / 3; }
+.div4 { grid-area: 4 / 1 / 6 / 3; }
+.div5 { grid-area: 6 / 1 / 7 / 3; }
+}
+.form > input {
+  width: 60%;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+
+.blue-font {color: blue;}
+.purple-font {color: purple;}
 .box{
 	width:10px;
 	height:10px;
@@ -158,6 +181,7 @@ div.box {
   }
 
   .right {
+    margin-right: 0;
     float: right;
   }
 
