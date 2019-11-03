@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "This has to be changed quick" # change to SecureRandom.hex(64)
+    use Rack::Flash
   end
 
   get "/" do

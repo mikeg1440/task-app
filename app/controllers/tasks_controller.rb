@@ -98,6 +98,10 @@ class UsersController < ApplicationController
     erb :'/tasks/index'
   end
 
+  get '/sort-by-priority' do
+
+  end 
+
   helpers do
     def convert_datetime(date, time)
       if date.empty? && time.empty?

@@ -11,6 +11,7 @@ gem 'shotgun'
 gem 'bcrypt'
 gem 'tux'
 gem 'pry-moves'
+gem 'rack-flash3'
 
 group :test do
   gem 'rspec'

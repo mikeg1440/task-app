@@ -25,5 +25,9 @@ class User < ActiveRecord::Base
     sorted
   end
 
+  def sort_by_due_time
+    self.tasks.sort_by {|task| task.due_time }
+  end
+
 
 end

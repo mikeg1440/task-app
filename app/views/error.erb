@@ -1,24 +1,22 @@
-
 <script>
-  document.write('<a href="' + document.referrer + '">Go Back</a>');
+  document.write('<a class="button aqua" href="' + document.referrer + '">Go Back</a>');
 </script>
 
 <h1>There seems to have been a problem</h1>
 
 <h2>The following needs to be changed</h2>
 
-<% if @user.errors.any? %>
+<% if !flash[:messages].empty? %>
 
-  <ul>
-    <% @user.errors.full_messages.each do |error| %>
-
-      <li><%= error %></li>
-
+  <ul class="center red-font" style="list-style: none;">
+    <% flash[:messages].each do |message| %>
+      <li><%= message %></li>
     <% end %>
-
   </ul>
 
+
 <% end %>
+
 
 <br>
 
