@@ -50,6 +50,7 @@
     color: white;
     font-weight: bold;
   }
+  a:hover { cursor: grabbing;}
 
   .tasks-btn {
     margin: 20px;
@@ -137,12 +138,9 @@
     background: #0101d891;
       font-weight: bold;
   }
-  .myButton:hover { background: #1C6EA4; }
+  .myButton:hover { background: #1C6EA4; cursor: grabbing; }
   .myButton:active { background: #144E75; }
 
-  .logoutButton:visited {
-    color: red;
-  }
   #logoutButton {
     position: relative;
     margin-right: 2px;
@@ -163,5 +161,7 @@
     margin-right: 10px;
     margin-top: 0px;
   }
-
+  #logoutButton:hover {
+    cursor: grabbing;
+  }
 }
