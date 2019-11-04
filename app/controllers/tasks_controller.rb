@@ -24,8 +24,13 @@ class TasksController < ApplicationController
       params.delete("submit")
       datetime = convert_datetime(params[:due_date], params[:due_time])
       task = Task.create(title: params[:title], description: params[:description], due_time: datetime, priority: params[:priority])
-      user.tasks << task
-      redirect '/tasks'
+      if task.errors.any?
+        flash[:messages] = task.errors.full_messages.uniq
+        erb :error
+      else
+        user.tasks << task
+        redirect '/tasks'
+      end
     else
       redirect '/login'
     end
@@ -60,7 +65,12 @@ class TasksController < ApplicationController
   get '/tasks/:id/edit' do
     if is_logged_in?
       @task = Task.find_by_id(params[:id])
-      erb :'tasks/edit', layout: :'tasks/layout'
+      if @task && current_user == @task.user
+        erb :'tasks/edit', layout: :'tasks/layout'
+      else
+        flash[:messages] = ["You can only edit tasks you created!"]
+        erb :error
+      end
     else
       redirect '/login'
     end
