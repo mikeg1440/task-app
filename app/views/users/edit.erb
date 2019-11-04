@@ -9,14 +9,16 @@
       <div class="form-title">
         <h1 class="">Edit User</h1>
       </div>
-      <div class="username">Username:</div>
-      <div class="username-input"><input type="text" name="user[username]" value="<%= @user.username %>"></div>
-      <div class="email">Email:</div>
+
+      <div class="username">Username:<i class="fa fa-user"></i></div>
+      <div class="username-input"> <input type="text" name="user[username]" value="<%= @user.username %>"></div>
+
+      <div class="email">Email: <i class="fa fa-envelope-square"></i></div>
       <div class="email-input"><input type="email" name="user[email]" value="<%= @user.email %>"></div>
 
-      <div class="password1">Password:</div>
+      <div class="password1">Password: <br><i class="fa fa-key"></i></div>
       <div class="password1-input"><input type="password" id="password_confirmation" name="user[password_confirmation]"></div>
-      <div class="password2">Confirm Password: </div>
+      <div class="password2">Confirm Password: <br><i class="fa fa-key"></i></div>
       <div class="password2-input"><input type="password" id="password" name="user[password]"></div>
 
       <div class="submit-button"><input class="button white-on-blue bold" type="submit" value="Edit User"></div>

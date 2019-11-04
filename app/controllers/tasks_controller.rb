@@ -12,7 +12,7 @@ class TasksController < ApplicationController
 
   get '/tasks/new' do
     if is_logged_in?
-      erb :'tasks/new', layout: :'tasks/layout'
+      erb :'tasks/new'
     else
       redirect '/login'
     end
@@ -52,7 +52,7 @@ class TasksController < ApplicationController
     if is_logged_in?
       if current_user.tasks.include?(Task.find_by_id(params[:id]))
         @task = Task.find_by_id(params[:id])
-        erb :'tasks/show', layout: :'tasks/layout'
+        erb :'tasks/show'
       else
         flash[:messages] = ["You cant view tasks that don't belong to you!"]
         erb :error
@@ -66,7 +66,7 @@ class TasksController < ApplicationController
     if is_logged_in?
       @task = Task.find_by_id(params[:id])
       if @task && current_user == @task.user
-        erb :'tasks/edit', layout: :'tasks/layout'
+        erb :'tasks/edit'
       else
         flash[:messages] = ["You can only edit tasks you created!"]
         erb :error

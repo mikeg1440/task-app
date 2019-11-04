@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
 
 
   get "/" do
-    erb :index
+    erb :'users/login'
   end
 
   get '/failure' do
