@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   get '/login' do
-    binding.pry
     if is_logged_in?
       redirect '/tasks'
     else
