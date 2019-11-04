@@ -15,10 +15,6 @@
 
   <% end %>
 
-  <div style="float: left">
-    <a class="BackButton" href="/tasks">Tasks</a>
-  </div>
-
   <div style="float: right;">
     <a class="EditButton" href="/users/<%= @user.id %>/edit">Edit User</a>
   </div>
@@ -32,12 +28,13 @@
 
   </div>
 
-  <div class="center">
-    <a class="red-btn" href="/user/<%= @user.id %>/delete">Delete Account</a>
-  </div>
+  <form class="center" action="/users/<%= @user.id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input id="delete-account" class="DeleteButton" type="submit" value="Delete Account"/>
+  </form>
 
 <% else %>
 
-  <h1>You must <a href="/Login">Login</a> to view this page.</h1>
+  <h1>You must <a href="/login">Login</a> to view this page.</h1>
 
 <% end %>

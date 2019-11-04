@@ -46,12 +46,10 @@ class UsersController < ApplicationController
     if current_user == @user
       @user.update(username: params[:user][:username], email: params[:user][:email])
       if !params[:user][:password].empty? || !params[:user][:password_confirmation].empty?
-        binding.pry
         @user.update(password: params[:user][:password], password_confirmation: params[:user][:password_confirmation])
       end
       if @user.errors.any?
         flash[:messages] = @user.errors.full_messages.uniq
-        binding.pry
         erb :error
       else
         flash[:messages] = "Successfuly updated account!"
@@ -63,9 +61,11 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/users/:id/delete' do
-    if current_user == User.find_by_id(params[:id])
+  delete '/users/:id' do
+    if current_user == User.find_by_id(params[:id]) && is_logged_in?
       current_user.delete
+      session.delete(:user_id)
+      session[:msg] = "Successfuly Deleted Account!"
       redirect '/login'
     else
       flash[:messages] = "Failed to delete account!"

@@ -69,9 +69,17 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .DeleteButton:hover {
-    background-color: #ff8989;
-    color: black;
+  .signupButton {
+    border: 2px solid;
+    background-color: blue;
+    padding: 5px 10px;
+    color: aliceblue;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+  .signupButton:hover {
+    cursor: grabbing;
+    background-color: #5959f1;
   }
 
   .BackButton {
@@ -102,8 +110,13 @@
     color: aliceblue;
     font-weight: bold;
     border-radius: 10px;
-
   }
+  .DeleteButton:hover {
+    background-color: #ff8989;
+    color: black;
+    cursor: grabbing;
+  }
+
 
   .button {
     font-size: 17px;

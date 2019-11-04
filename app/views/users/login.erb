@@ -1,4 +1,9 @@
 
+<% if session[:msg] %>
+  <div class="center">
+    <%= session[:msg] %><br>
+  </div>
+<% end; session.delete(:msg) %>
 
 <form class="login-wrapper" action="/login" method="post">
 

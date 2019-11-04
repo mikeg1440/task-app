@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   get '/login' do
+    binding.pry
     if is_logged_in?
       redirect '/tasks'
     else
@@ -12,7 +13,7 @@ class SessionsController < ApplicationController
     # login user if cred are correct and set cookies/session params, then route to /tasks
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
-      #response.set_cookie(:user_id, user.id)
+      # response.set_cookie(:user_id, user.id)
       session[:user_id] = user.id
       redirect '/tasks'
     else
@@ -25,7 +26,8 @@ class SessionsController < ApplicationController
   get '/logout' do
     # clear session/cookies then route to login
     response.delete_cookie(:user_id)
-    session.delete(:user_id)
+    # session.delete(:user_id)
+    session.clear
     redirect '/login'
   end
 

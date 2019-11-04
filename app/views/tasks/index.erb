@@ -47,7 +47,10 @@
 
         <p class="task_description"><%= task.description %></p>
 
-        Due Time: <%= !!task.due_time ? task.due_time.to_time : "None" %>
+        <% if task.due_time %>
+          Due Time: <%= !!task.due_time ? task.due_time.to_time : "None" %>
+        <% end %>
+
       </div>
     <% end %>
 

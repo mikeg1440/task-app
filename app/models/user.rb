@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
 
 
   def clear_completed
-    binding.pry
     self.tasks.each do |task|
        if task.complete
          task.delete
@@ -18,7 +17,7 @@ class User < ActiveRecord::Base
      end
   end
 
-  def sort_by_priority
+  def sort_tasks_by_priority
     sorted = []
     high = self.tasks.find_all {|t| t.priority == "High"}
     medium = self.tasks.find_all {|t| t.priority == "Medium"}

@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   get '/tasks' do
     if is_logged_in?
       @user = current_user
-      @tasks = @user.tasks
+      @tasks = @user.sort_tasks_by_priority
       erb :'tasks/index'
     else
       redirect '/login'
@@ -24,9 +24,7 @@ class TasksController < ApplicationController
       params.delete("submit")
       datetime = convert_datetime(params[:due_date], params[:due_time])
       task = Task.create(title: params[:title], description: params[:description], due_time: datetime, priority: params[:priority])
-      # task.due_time = datetime
       user.tasks << task
-      # binding.pry
       redirect '/tasks'
     else
       redirect '/login'
@@ -46,9 +44,14 @@ class TasksController < ApplicationController
   end
 
   get '/tasks/:id' do
-    if is_logged_in? && current_user.tasks.include?(Task.find_by_id(params[:id]))
-      @task = Task.find_by_id(params[:id])
-      erb :'tasks/show', layout: :'tasks/layout'
+    if is_logged_in?
+      if current_user.tasks.include?(Task.find_by_id(params[:id]))
+        @task = Task.find_by_id(params[:id])
+        erb :'tasks/show', layout: :'tasks/layout'
+      else
+        flash[:messages] = ["You cant view tasks that don't belong to you!"]
+        erb :error
+      end
     else
       redirect '/login'
     end
@@ -88,7 +91,6 @@ class TasksController < ApplicationController
   end
 
   get '/clear-complete' do
-    binding.pry
     current_user.clear_completed
     redirect '/tasks'
   end

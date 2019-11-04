@@ -12,7 +12,7 @@
 
 <h1 class="white-font"><%= @task.title %></h1>
 
-Priority: 
+Priority:
 <span class="<%= @task.priority.downcase if @task.priority %>-priority"style="font-weight: bold;"><%= @task.priority %></span>
 
 <br /><br />
@@ -20,5 +20,6 @@ Priority:
 <h4><%= @task.description %></h4>
 
 <br>
-
-Due Time: <span><%= @task.due_time.to_time %></span><span style="color: red; font-weight: 100;"><%= " [Expired]" if @task.past_due? %></span>
+<% if @task.due_time %>
+  Due Time: <span><%= @task.due_time.to_time %></span><span style="color: red; font-weight: 100;"><%= " [Expired]" if @task.past_due? %></span>
+<% end %>

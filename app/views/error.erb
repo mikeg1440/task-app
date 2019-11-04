@@ -1,7 +1,9 @@
-<script>
-  document.write('<a class="button aqua" href="' + document.referrer + '">Go Back</a>');
-</script>
 
+<% unless is_logged_in? %>
+  <div class="">
+    <a class="blue-btn" href="/login">Login</a>
+  </div>
+<% end %>
 <div class="center">
   <h1>There seems to have been a problem</h1>
 
@@ -17,6 +19,7 @@
       <% end %>
     </ul>
 
+    <% flash[:messages] = nil %>
   <% elsif flash[:messages].class == String %>
 
   <% end %>
@@ -28,5 +31,9 @@
 <br>
 
 <h3>
-  Please return to the <script> document.write('<a href="' + document.referrer + '">previous page</a>');</script> and try agian
+  Please return to the <a onclick="document.getElementById('back-button').click();" href="#">previous page</a> and try agian
 </h3>
+
+<form class="center">
+  <input id="back-button" class="BackButton" type="button" value="Go back!" onclick="history.back()">
+</form>

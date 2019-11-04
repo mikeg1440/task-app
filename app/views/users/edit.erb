@@ -2,8 +2,6 @@
 
 <% if is_logged_in? %>
 
-<a class="BackButton" href="/tasks">Tasks</a>
-
   <form class="" action="/users/<%= @user.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
 

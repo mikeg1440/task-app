@@ -5,7 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use Rack::MethodOverride
-use Rack::Session::Cookie
+# use Rack::Session::Cookie
 run ApplicationController
 use UsersController
 use TasksController
