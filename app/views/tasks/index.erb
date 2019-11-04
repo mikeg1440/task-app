@@ -55,6 +55,10 @@
     <input type="submit" id="update_task_btn" hidden>
   </form>
 
+  <hr>
+
+  <a class="blue-btn" href="/users/<%= @tasks.first.user.id %>">Account Settings</a>
+
 <% else %>
 
   <h2>No Tasks to List!</h2>

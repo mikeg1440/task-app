@@ -52,31 +52,57 @@
   label {
     color: white;
   }
+  hr {
+    padding: 1px;
+    color: #cccccc;
+    background: #cccccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .grid-container > * { padding: 5px;  }
+  .grid-container input { border-radius: 15px; line-height: 2; padding: 5px;}
+  .title { grid-area: title; }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: ". form-title form-title form-title ." ". username username-input username-input ." ". email email-input email-input ." ". password1 password1-input password1-input ." ". password2 password2-input password2-input ." ". . submit-button . .";
+  }
+
+  .form-title { grid-area: form-title; text-align: center;}
+
+  .username { grid-area: username; text-align: right; }
+
+  .username-input { grid-area: username-input; }
+
+  .email { grid-area: email; text-align: right; }
+
+  .email-input { grid-area: email-input; }
+
+  .password1 { grid-area: password1; text-align: right; }
+
+  .password1-input { grid-area: password1-input; }
+
+  .password2 { grid-area: password2; text-align: right; }
+
+  .password2-input { grid-area: password2-input; }
+
+  .submit-button { grid-area: submit-button; width: 50%; margin: auto; }
 
 .form {
-  .parent {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-grid-template-rows: repeat(6, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-}
-
-.div1 { grid-area: 1 / 1 / 2 / 3; }
-.div2 { grid-area: 2 / 1 / 3 / 3; }
-.div3 { grid-area: 3 / 1 / 4 / 3; }
-.div4 { grid-area: 4 / 1 / 6 / 3; }
-.div5 { grid-area: 6 / 1 / 7 / 3; }
 }
 .form > input {
   width: 60%;
   padding: 15px;
   margin-top: 20px;
-  border-radius: 15px;
+  border-radius: 15px
 }
 
 .blue-font {color: blue;}
 .purple-font {color: purple;}
+.red-font {color: red}
 .box{
 	width:10px;
 	height:10px;
@@ -84,6 +110,15 @@ grid-row-gap: 0px;
 div.box {
   margin-right: 5px;
   margin-left: 5px;
+}
+.bold { font-weight: bold;}
+.white-on-blue {
+  color: white;
+  background-color: #14146db8;
+}
+.white-on-blue:hover {
+  background-color: #4d4de0;
+  cursor: pointer;
 }
 .aqua { background: #60ffcaa1; }
 .green{

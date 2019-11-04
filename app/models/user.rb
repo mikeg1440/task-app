@@ -2,7 +2,11 @@ class User < ActiveRecord::Base
   has_many :tasks
   has_secure_password
 
-  validates :username, :email, uniqueness: true
+  validates :username, :email, uniqueness: true, presence: true
+  validates :password_confirmation, confirmation: true, on: :update
+  validates :password, confirmation: true
+
+
 
   def clear_completed
     binding.pry

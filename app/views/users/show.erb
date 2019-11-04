@@ -3,6 +3,18 @@
 
 <% if is_logged_in? %>
 
+  <% if flash[:messages] %>
+
+    <% if flash[:messages].class != Array %>
+      <h4 class="center"><%= flash[:messages] %></h4>
+    <% elsif flash[:messages].class == Array %>
+      <% flash[:messages].each do |message| %>
+        <h4 class="center"><%= message %></h4>
+      <% end %>
+    <% end %>
+
+  <% end %>
+
   <div style="float: left">
     <a class="BackButton" href="/tasks">Tasks</a>
   </div>

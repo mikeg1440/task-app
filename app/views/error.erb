@@ -2,17 +2,24 @@
   document.write('<a class="button aqua" href="' + document.referrer + '">Go Back</a>');
 </script>
 
-<h1>There seems to have been a problem</h1>
+<div class="center">
+  <h1>There seems to have been a problem</h1>
 
-<h2>The following needs to be changed</h2>
+  <h2>The following needs to be changed</h2>
+</div>
 
 <% if !flash[:messages].empty? %>
 
-  <ul class="center red-font" style="list-style: none;">
-    <% flash[:messages].each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+  <% if flash[:messages].class == Array %>
+    <ul class="center red-font" style="list-style: none;">
+      <% flash[:messages].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+
+  <% elsif flash[:messages].class == String %>
+
+  <% end %>
 
 
 <% end %>
