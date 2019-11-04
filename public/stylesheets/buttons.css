@@ -43,7 +43,18 @@
     color: white;
     font-weight: bold;
   }
+  a.red-btn {
+    background-color: red;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+  }
 
+  .tasks-btn {
+    margin: 20px;
+  }
+  .logout-btn
 
   .signupButton
   {
@@ -149,6 +160,8 @@
     box-shadow: rgb(0, 0, 0) 5px 5px 7px 1px;
     border: 2px solid rgb(28, 110, 164);
     display: inline-block;
+    margin-right: 10px;
+    margin-top: 0px;
   }
 
 }

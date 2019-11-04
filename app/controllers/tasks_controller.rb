@@ -2,8 +2,8 @@ class TasksController < ApplicationController
 
   get '/tasks' do
     if is_logged_in?
-      user = current_user
-      @tasks = user.tasks
+      @user = current_user
+      @tasks = @user.tasks
       erb :'tasks/index'
     else
       redirect '/login'

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     # login user if cred are correct and set cookies/session params, then route to /tasks
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
-      response.set_cookie(:user_id, user.id)
+      #response.set_cookie(:user_id, user.id)
       session[:user_id] = user.id
       redirect '/tasks'
     else
