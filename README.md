@@ -1,5 +1,4 @@
 
-![Screenshot of Task App UI](https://i.imgur.com/ygagaxI.png)
 
 
 # Task App
@@ -12,6 +11,9 @@ ___________              __        _____
   |____|  (____  /____  >__|_ \ \____|__  /   __/|   __/
                \/     \/     \/         \/|__|   |__|    
 ```
+
+![Screenshot of Task App UI](https://i.imgur.com/ygagaxI.png)
+
 ### Contents
 
 - [Description](#Description)
