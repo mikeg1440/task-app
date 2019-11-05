@@ -1,4 +1,7 @@
 
+![Screenshot of Task App UI](https://i.imgur.com/ygagaxI.png)
+
+
 # Task App
 
 ```

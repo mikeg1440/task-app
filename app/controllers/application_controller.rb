@@ -8,11 +8,11 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     set :session_secret, ENV['SESSION_SECRET'] { SecureRandom.hex(64) }
     use Rack::Flash
-    use Rack::Session::Cookie
   end
 
 
   get "/" do
+    binding.pry
     erb :'users/login'
   end
 
