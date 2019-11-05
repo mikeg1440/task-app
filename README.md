@@ -9,8 +9,13 @@ ___________              __        _____
   |____|  (____  /____  >__|_ \ \____|__  /   __/|   __/
                \/     \/     \/         \/|__|   |__|    
 ```
+### Contents
 
-[Pull Request Process](#Pull-Request-Process)
+- [Description](#Description)
+- [Installation](#Installation)
+- [Pull Request Process](#Pull-Request-Process)
+- [Contributing](#Contributing)
+- [License](#License)
 
 ## Description
   This is a to do list app that allows users to sign up with a unique username and email and then create tasks that are due.  The main page displays all the users tasks.  Tasks must have a title and you can optionally add a larger description if you want to elaborate on the task.  You also have the option of setting a due date and due time, the tasks will turn red when the due date or due time has passed.  Also you have the ability to set a priority level, the priority level will determine the order in which the tasks show up on the main '/tasks' page.  On the tasks listings page you can check the box if the task if completed as well as edit any task and of course delete any task.  There is a button to clear off all the completed tasks if you want to delete multiple at once.  Finally there is a button in the footer called `Edit Account` that gives users the ability to change their username, email or password.  
