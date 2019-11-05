@@ -29,7 +29,7 @@ ___________              __        _____
   There are validations on usernames and emails to so that you can only use usernames that have not been used before and you must enter a email.  Error messages should get displayed stating this is you try.
 
 ## Installation
-  To install this app you need to have Ruby installed.  Just run `bundle install` to install all necessary gem files.  If you want you can set the program environment with a variable like this `SINATRA_ENV=test`, it defaults to development if none is set.  Next execute `rake db:migrate` to run all the migrations and set up the database.  I ran the it with `shotgun` but you could use `rack` if you wanted to.
+  To install this app you need to have Ruby installed.  Just run `bundle install` to install all necessary gem files.  If you want you can set the program environment with a variable like this `SINATRA_ENV=test`, it defaults to development if none is set.  Next execute `rake db:migrate` to run all the migrations and set up the database.  Finally just start a server app, I was running it with gem `shotgun` but you could use `rackup` if you wanted to as well.
 
 ## Contributing
 
