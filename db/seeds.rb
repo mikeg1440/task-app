@@ -1,4 +1,4 @@
-user1 = User.create(username: "admin", email: "admin@mail.com", password: "root")
+user1 = User.create(username: "admin", email: "admin@mail.com", password: "admin", password_confirmation: "admin")
 
 user1.tasks << Task.create(title: "Create task routes", description: "Make sure all task routes are setup and working")
 
