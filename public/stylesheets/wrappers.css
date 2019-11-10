@@ -10,6 +10,10 @@
     width: 85%;
   }
 
+  .grid-container input {
+    text-align: center;
+  }
+
   .login-wrapper {
     width: 50%;
     border-radius: 20px;

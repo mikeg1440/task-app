@@ -133,6 +133,10 @@ div.box {
 .white-font {
   color: white;
 }
+
+.priority-level{
+  font-size: 14px;
+}
 .high-priority{
 	background:lightgreen;
 }
@@ -145,8 +149,25 @@ div.box {
 .normal-priority{
   background: inherit;
 }
-.expired-priority{
-  background: red;
+.high-priority-text{
+	color: lightgreen;
+  font-weight: bold;
+}
+.medium-priority-text{
+	color: cyan;
+  font-weight: bold;
+}
+.low-priority-text{
+	color: yellow;
+  font-weight: bold;
+}
+.normal-priority-text{
+  color:  inherit;
+  font-weight: bold;
+}
+.expired-priority-text{
+  color:  red;
+  font-weight: bold;
 }
 
 

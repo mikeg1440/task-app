@@ -10,7 +10,7 @@
 
   .task-expired {
     background-color: #de4444;
-    padding: 10px 5px 10px 5px;
+    padding: 20px 10px;
     margin-top: 7px;
     border-radius: 10px;
   }
@@ -42,7 +42,7 @@
 
   .task {
     background-color: #d641f1;
-    padding: 10px 5px 10px 5px;
+    padding: 20px 10px;
     margin-top: 7px;
     border-radius: 10px;
   }

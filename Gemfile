@@ -10,8 +10,8 @@ gem 'thin'
 gem 'shotgun'
 gem 'bcrypt'
 gem 'tux'
-gem 'pry-moves'
 gem 'rack-flash3'
+gem 'pry-moves'
 
 group :test do
   gem 'rspec'

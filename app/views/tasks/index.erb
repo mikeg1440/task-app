@@ -27,7 +27,7 @@
   <form class="" action="/tasks" method="post">
     <input type="hidden" name="_method" value="PATCH">
 
-    <% @tasks.each do |task| %>
+    <% @user.sort_tasks_by_priority.each do |task| %>
       <!-- <div class="task"> -->
       <div class="<%= task.due_time && task.past_due? ? "task-expired" : "task" %>">
 
@@ -35,7 +35,7 @@
           <input type="checkbox" name="task_id" onchange="update_tasks(this)" value="<%= task.id %>" <%= "checked" if task.complete %>>  <%= task.title %>
           <span class="checkmark <%= task.priority ? task.priority.downcase : nil %>-priority"></span>
 
-          <span style="font-size: 12px; ">Priority: <b><%= task.priority %></b></span>
+          <span class="priority-level"> - Priority: <b class="<%= task.priority ? task.priority.downcase : nil %>-priority-text"><%= task.priority %></b> - </span>
 
           <div class="option-text">
             <a class="EditButton" href="/tasks/<%= task.id %>/edit">Edit</a>
@@ -48,7 +48,7 @@
         <p class="task_description"><%= task.description %></p>
 
         <% if task.due_time %>
-          Due Time: <%= !!task.due_time ? task.due_time.to_time : "None" %>
+          <b>Due Time:</b> <%= !!task.due_time ? task.due_time.to_time.strftime("%c") : "None" %>
         <% end %>
 
       </div>

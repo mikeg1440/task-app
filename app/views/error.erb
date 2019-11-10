@@ -14,7 +14,7 @@
 
   <% if flash[:messages].class == Array %>
     <ul class="center red-font" style="list-style: none;">
-      <% flash[:messages].each do |message| %>
+      <% flash[:messages].uniq.each do |message| %>
         <li><%= "#{message}" %></li>
       <% end %>
     </ul>
