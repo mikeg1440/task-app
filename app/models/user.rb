@@ -20,12 +20,14 @@ class User < ActiveRecord::Base
   def sort_tasks_by_priority
     sorted = []
     high = self.tasks.find_all {|t| t.priority == "High"}
-    medium = self.tasks.find_all {|t| t.priority == "Medium"}
-    low = self.tasks.find_all {|t| t.priority == "Low"}
+    sorted += sort_by_due_time(high)
 
-    sorted += high
-    sorted += medium
-    sorted += low
+    medium = self.tasks.find_all {|t| t.priority == "Medium"}
+    sorted += sort_by_due_time(medium)
+
+    low = self.tasks.find_all {|t| t.priority == "Low"}
+    sorted += sort_by_due_time(low)
+
     sorted
   end
 
@@ -33,5 +35,17 @@ class User < ActiveRecord::Base
     self.tasks.sort_by {|task| task.due_time }
   end
 
+  private
+
+  def sort_by_due_time(tasks)
+    tasks_with_due_times = tasks.select {|task| task.due_time }
+    tasks_without_due_times = tasks.select {|task| !task.due_time }
+    sorted_tasks = []
+
+    sorted_tasks += tasks_with_due_times.sort_by {|task| task.due_time }
+    sorted_tasks += tasks_without_due_times
+
+    sorted_tasks
+  end
 
 end
