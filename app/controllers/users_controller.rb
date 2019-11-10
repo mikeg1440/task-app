@@ -8,15 +8,14 @@ class UsersController < ApplicationController
   post '/signup' do
     # create new user if username not taken, sign user in then route to /tasks
     @user = User.create(username: params[:username], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
-    @user.save
-    if @user.errors.any?
-      flash[:messages] = @user.errors.full_messages
-      erb :error
-    else
+    if @user.save
       @user.password = params[:password]
       session[:user_id] = @user.id
       # response.set_cookie(:user_id, @user.id)
       redirect '/tasks'
+    else
+      flash[:messages] = @user.errors.full_messages
+      erb :error
     end
   end
 
