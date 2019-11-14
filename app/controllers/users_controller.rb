@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     if @user.save
       @user.password = params[:password]
       session[:user_id] = @user.id
-      # response.set_cookie(:user_id, @user.id)
       redirect '/tasks'
     else
       flash[:messages] = @user.errors.full_messages

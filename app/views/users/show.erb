@@ -2,6 +2,7 @@
 
 
 <% if is_logged_in? %>
+  <script type="text/javascript" src="../javascripts/update.js"></script>
 
   <% if flash[:messages] %>
 
@@ -28,10 +29,13 @@
 
   </div>
 
-  <form class="center" action="/users/<%= @user.id %>" method="post">
+  <form id="delete_account" action="/users/<%= @user.id %>" method="post">
     <input type="hidden" name="_method" value="DELETE">
-    <input id="delete-account" class="DeleteButton" type="submit" value="Delete Account"/>
   </form>
+
+  <div class="center">
+    <input id="delete-account" class="DeleteButton" type="submit" value="Delete Account" onclick="ConfirmDelete()"/>
+  </div>
 
 <% else %>
 

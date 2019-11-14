@@ -149,6 +149,11 @@ div.box {
 .normal-priority{
   background: inherit;
 }
+.expired-priority{
+  background-color:  red;
+  font-weight: bold;
+}
+
 .high-priority-text{
 	color: lightgreen;
   font-weight: bold;

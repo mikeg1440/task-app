@@ -15,15 +15,26 @@
 
   <textarea class="editor" name="description" rows="8" cols="80" placeholder="Description"></textarea><br>
 
-  <div class="center">
-    <label for="due_date">Due Date:</label>
-    <input id="due_date" class="time-input" type="date" name="due_date"  />
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="due_date">Due Date:</label>
+        <input id="due_date" class="" type="date" name="due_date"  />
+      </div>
 
-    <label for="due_time">Due Time:</label>
-    <input id="due_time" class="time-input" type="time" name="due_time"  />
-
+      <div class="col-md-6">
+        <label for="due_time">Due Time:</label>
+        <input id="due_time" class="" type="time" name="due_time"  />
+      </div>
+    </div>
   </div>
 
   <input class="submit-btn" type="submit" name="submit" value="Create Task">
 
 </form>
+
+<script>
+  setTimeout(function(){
+    document.getElementsByClassName("tox-notification__dismiss tox-button tox-button--naked tox-button--icon")[0].click();
+  }, 500);
+</script>

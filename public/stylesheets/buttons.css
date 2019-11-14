@@ -31,12 +31,14 @@
     font-weight: bold;
   }
   a.blue-btn {
+    border: 2px solid aliceblue;
     background-color: cornflowerblue;
     padding: 8px;
     border-radius: 5px;
     color: white;
     font-weight: bold;
   }
+  a.blue-btn:hover { border-color: black; background-color: #a7bfe8;}
   a.red-btn {
     background-color: red;
     padding: 8px;
@@ -47,7 +49,7 @@
   a:hover { cursor: grabbing;}
 
   .tasks-btn {
-    margin: 20px;
+    margin: 30px;
   }
   .logout-btn
 

@@ -21,5 +21,5 @@ Priority:
 
 <br>
 <% if @task.due_time %>
-  Due Time: <span><%= @task.due_time.to_time %></span><span style="color: red; font-weight: 100;"><%= " [Expired]" if @task.past_due? %></span>
+  Due Time: <span><%= @task.due_time.to_time.strftime("%a %b %e, %Y at %I:%M %p") %></span><span style="color: red; font-weight: 100;"><%= " [Expired]" if @task.past_due? %></span>
 <% end %>

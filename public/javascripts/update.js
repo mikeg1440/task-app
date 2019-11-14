@@ -21,28 +21,11 @@ function delete_task(link)
   location.reload();
 }
 
-// window.onload = function ()
-// {
-//   tasks = document.getElementsByClassName('task');
-//   function update_tasks()
-//   {
-//     btn = document.getElementById("update_task_btn");
-//
-//     alert(btn.click());
-//   }
-//
-//
-//   checks = [];
-//   for (i = 0; i < tasks.length; i++)
-//   {
-//     checks.push(tasks[i].children[0].children[0]);
-//   }
-//
-//   for (task_id = 0; task_id < tasks.length; task_id++) {
-//     // checks[task_id].addEventListener("click", update_tasks);
-//       // checks[task_id].addEventListener("click", update_tasks);
-//
-//   }
-//
-//
-// }
+function ConfirmDelete()
+{
+  if(confirm('Press OK to confirm deletion of this account')) {
+    document.getElementById("delete_account").submit();
+  } else {
+    return false;
+  }
+}

@@ -14,6 +14,7 @@ gem 'rack-flash3'
 gem 'pry-moves'
 
 group :test do
+  gem 'faker'  # used in the seed file
   gem 'rspec'
   # gem 'capybara'
   gem 'rack-test'

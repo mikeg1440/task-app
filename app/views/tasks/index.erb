@@ -31,7 +31,7 @@
       <!-- <div class="task"> -->
       <div class="<%= task.due_time && task.past_due? ? "task-expired" : "task" %>">
 
-        <label class="container">
+        <label class="box-container">
           <input type="checkbox" name="task_id" onchange="update_tasks(this)" value="<%= task.id %>" <%= "checked" if task.complete %>>  <%= task.title %>
           <span class="checkmark <%= task.priority ? task.priority.downcase : nil %>-priority"></span>
 
@@ -48,7 +48,7 @@
         <p class="task_description"><%= task.description %></p>
 
         <% if task.due_time %>
-          <b>Due Time:</b> <%= !!task.due_time ? task.due_time.to_time.strftime("%c") : "None" %>
+          <b>Due Time:</b> <%= !!task.due_time ? task.due_time.to_time.strftime("%a %b %e, %Y at %I:%M %p") : "None" %>
         <% end %>
 
       </div>
@@ -58,9 +58,11 @@
     <input type="submit" id="update_task_btn" hidden>
   </form>
 
-  <hr>
+  <hr><br>
 
-  <a class="blue-btn" href="/users/<%= @user.id %>">Account Settings</a>
+  <div class="center">
+    <a class="blue-btn" href="/users/<%= @user.id %>">Account Settings</a>
+  </div>
 
 <% else %>
 
