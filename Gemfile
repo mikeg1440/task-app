@@ -11,9 +11,10 @@ gem 'shotgun'
 gem 'bcrypt'
 gem 'tux'
 gem 'rack-flash3'
-gem 'pry-moves'
+gem "dotenv", "~> 2.7"
 
-group :test do
+group :test, :development do
+  gem 'pry-moves'
   gem 'faker'  # used in the seed file
   gem 'rspec'
   # gem 'capybara'
