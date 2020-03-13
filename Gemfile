@@ -20,4 +20,5 @@ group :test, :development do
   # gem 'capybara'
   gem 'rack-test'
   # gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
+  gem "racksh", "~> 1.0"
 end
