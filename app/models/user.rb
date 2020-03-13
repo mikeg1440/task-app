@@ -4,9 +4,8 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: true, presence: true
   validates :email, presence: true
-  validates :password_confirmation, confirmation: true, on: :update
-  validates :password, confirmation: true
-
+  validates :password_confirmation, presence: true, on: :create
+  validates :password, presence: true
 
 
   def clear_completed
