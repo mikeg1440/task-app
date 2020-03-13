@@ -1,43 +1,41 @@
 class TasksController < ApplicationController
 
-  get '/tasks' do
-    if is_logged_in?
-      @user = current_user
-      @tasks = @user.sort_tasks_by_priority
-      erb :'tasks/index'
-    else
+  def check_session
+    if !is_logged_in?
       redirect '/login'
     end
+  end
+
+  get '/tasks' do
+    check_session
+    @user = current_user
+    @tasks = @user.sort_tasks_by_priority
+    erb :'tasks/index'
   end
 
   get '/tasks/new' do
-    if is_logged_in?
-      erb :'tasks/new'
-    else
-      redirect '/login'
-    end
+    check_session
+    erb :'tasks/new'
   end
 
   post '/tasks' do
-    if is_logged_in?
-      user = current_user
-      params.delete("submit")
-      datetime = convert_datetime(params[:due_date], params[:due_time])
-      task = Task.create(title: params[:title], description: params[:description], due_time: datetime, priority: params[:priority])
-      if task.errors.any?
-        flash[:messages] = task.errors.full_messages.uniq
-        erb :error
-      else
-        user.tasks << task
-        redirect '/tasks'
-      end
+    check_session
+    user = current_user
+    params.delete("submit")
+    datetime = convert_datetime(params[:due_date], params[:due_time])
+    task = Task.create(title: params[:title], description: params[:description], due_time: datetime, priority: params[:priority])
+    if task.errors.any?
+      flash[:messages] = task.errors.full_messages.uniq
+      erb :error
     else
-      redirect '/login'
+      user.tasks << task
+      redirect '/tasks'
     end
   end
 
   # this is for updating the status of tasks from the users main index page
   patch '/tasks' do
+    check_session
     task = Task.find_by_id(params[:task_id])
     if task.complete
       task.complete = false
@@ -49,55 +47,43 @@ class TasksController < ApplicationController
   end
 
   get '/tasks/:id' do
-    if is_logged_in?
-      if current_user.tasks.include?(Task.find_by_id(params[:id]))
-        @task = Task.find_by_id(params[:id])
-        erb :'tasks/show'
-      else
-        flash[:messages] = ["You cant view tasks that don't belong to you!"]
-        erb :error
-      end
+    check_session
+    if current_user.tasks.include?(Task.find_by_id(params[:id]))
+      @task = Task.find_by_id(params[:id])
+      erb :'tasks/show'
     else
-      redirect '/login'
+      flash[:messages] = ["You cant view tasks that don't belong to you!"]
+      erb :error
     end
   end
 
   get '/tasks/:id/edit' do
-    if is_logged_in?
-      @task = Task.find_by_id(params[:id])
-      if @task && current_user == @task.user
-        erb :'tasks/edit'
-      else
-        flash[:messages] = ["You can only edit tasks you created!"]
-        erb :error
-      end
+    check_session
+    @task = Task.find_by_id(params[:id])
+    if @task && current_user == @task.user
+      erb :'tasks/edit'
     else
-      redirect '/login'
+      flash[:messages] = ["You can only edit tasks you created!"]
+      erb :error
     end
   end
 
   patch '/tasks/:id' do
-    if is_logged_in?
-      task = Task.find_by_id(params[:id])
-      datetime = convert_datetime(params[:due_date], params[:due_time])
-      if task && task.update(title: params[:title], description: params[:description], due_time: datetime, priority: params[:priority])
-        redirect "/tasks/#{params[:id]}"
-      else
-        redirect "/failure"
-      end
+    check_session
+    task = Task.find_by_id(params[:id])
+    datetime = convert_datetime(params[:due_date], params[:due_time])
+    if task && task.update(title: params[:title], description: params[:description], due_time: datetime, priority: params[:priority])
+      redirect "/tasks/#{params[:id]}"
     else
-      redirect '/login'
+      redirect "/failure"
     end
   end
 
   delete '/tasks/:id' do
-    if is_logged_in?
-      task = Task.find_by_id(params[:id])
-      task.delete
-      redirect '/tasks'
-    else
-      redirect '/login'
-    end
+    check_session
+    task = Task.find_by_id(params[:id])
+    task.delete
+    redirect '/tasks'
   end
 
   get '/clear-complete' do
