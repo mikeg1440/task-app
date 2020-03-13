@@ -1,0 +1,2 @@
+
+worker: rake db:migrate
