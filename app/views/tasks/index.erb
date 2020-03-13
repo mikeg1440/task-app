@@ -27,7 +27,7 @@
   <form class="" action="/tasks" method="post">
     <input type="hidden" name="_method" value="PATCH">
 
-    <% @user.sort_tasks_by_priority.each do |task| %>
+    <% @tasks.each do |task| %>
       <!-- <div class="task"> -->
       <div class="<%= task.due_time && task.past_due? ? "task-expired" : "task" %>">
 
