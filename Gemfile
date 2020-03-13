@@ -5,15 +5,16 @@ gem 'activerecord', '~> 4.2', '>= 4.2.6', :require => 'active_record'
 gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
 gem 'require_all'
-gem 'sqlite3', '~> 1.3.6'
+gem "pg", "~> 0.18"
 gem 'thin'
 gem 'shotgun'
 gem 'bcrypt'
 gem 'tux'
 gem 'rack-flash3'
-gem 'pry-moves'
+gem "dotenv", "~> 2.7"
 
-group :test do
+group :test, :development do
+  gem 'pry-moves'
   gem 'faker'  # used in the seed file
   gem 'rspec'
   # gem 'capybara'
