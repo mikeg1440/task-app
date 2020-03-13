@@ -17,8 +17,8 @@ group :test, :development do
   gem 'pry-moves'
   gem 'faker'  # used in the seed file
   gem 'rspec'
-  # gem 'capybara'
+  gem "capybara", "~> 3.31"
   gem 'rack-test'
-  # gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
+  gem "database_cleaner", "~> 1.8"
   gem "racksh", "~> 1.0"
 end
