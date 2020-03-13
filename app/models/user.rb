@@ -31,19 +31,11 @@ class User < ActiveRecord::Base
     sorted
   end
 
-  def sort_by_due_time
-    self.tasks.sort_by {|task| task.due_time }
-  end
-
   private
 
   def sort_by_due_time(tasks)
-    tasks_with_due_times = tasks.select {|task| task.due_time }
-    tasks_without_due_times = tasks.select {|task| !task.due_time }
-    sorted_tasks = []
-
-    sorted_tasks += tasks_with_due_times.sort_by {|task| task.due_time }
-    sorted_tasks += tasks_without_due_times
+    sorted_tasks = tasks.select {|task| task.due_time }.sort_by {|task| task.due_time }
+    sorted_tasks += tasks.select {|task| !task.due_time }
 
     sorted_tasks
   end
