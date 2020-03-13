@@ -1,9 +1,9 @@
 
 require_relative '../spec_helper.rb'
 
-describe 'Creating a new user' do
+describe 'User' do
 
-  context 'should allow user to be' do
+  context 'should allow created user to be' do
 
     it 'valid if created with proper variables' do
       user = User.create(username: "tester", email: "tester@mail.com", password: "password", password_confirmation: "password" )
