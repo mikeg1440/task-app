@@ -15,7 +15,19 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+
     <script>tinymce.init({selector:'textarea'});</script>
+
+    <style>
+      .github-fork-ribbon:before {
+        background-color: #00aa63;
+      }
+      .github-fork-ribbon:after {
+        text-shadow: -3px 0em 2px rgba(0,0,0,.5);
+      }
+    </style>
+
   </head>
   <body>
 
@@ -47,6 +59,8 @@
         <small>&copy; 2019 <strong>TaskApp</strong></small>
       </footer>
     </div>
+
+    <a class="github-fork-ribbon right-bottom fixed orange" target="_blank" href="https://github.com/mikeg1440/task-app" alt="Form me on Github ribbon" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>
