@@ -57,7 +57,7 @@ GEM
       binding_of_caller (~> 0.7)
       pry (>= 0.10.4, < 1)
     public_suffix (4.0.3)
-    rack (2.2.3)
+    rack (2.2.3.1)
     rack-flash3 (1.0.5)
       rack
     rack-protection (2.0.8.1)
